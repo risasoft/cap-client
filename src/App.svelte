@@ -22,8 +22,6 @@
 
 	onMount(async () => {
 
-		checkCountry();
-
 		loadRoute();
 		catchLinks((path) => navigateTo(path));
 
