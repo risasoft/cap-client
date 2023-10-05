@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0xcap/client-v4.git"
+    "url": "git+https://github.com/capofficial/client.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/0xcap/client-v4/issues"
+    "url": "https://github.com/capofficial/client/issues"
   },
-  "homepage": "https://github.com/0xcap/client-v4#readme",
+  "homepage": "https://github.com/capofficial/client#readme",
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.9",
     "@rollup/plugin-commonjs": "^22.0.2",
