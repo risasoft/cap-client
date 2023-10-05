@@ -121,7 +121,8 @@ export default {
         }),
 
 		replace({
-	      'process.env.NODE_ENV': JSON.stringify('production'),
+	      'process.env.NODE_ENV': production ? JSON.stringify('production') : JSON.stringify('development'),
+	      'process.env.NODE_APP_INSTANCE': JSON.stringify(process.env.NODE_APP_INSTANCE || 'cap'),
 	    }),
 		
 		// In dev mode, call `npm run start` once

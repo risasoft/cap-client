@@ -5,6 +5,21 @@ export const ALCHEMY_SETTINGS = {
 	network: "arbitrum"
 };
 
+// Wallet Connect Settings
+// PROJECT_ID: Project ID associated with [WalletConnect account](https://cloud.walletconnect.com)
+// DAPP_URL: Required by some wallets for WalletConnect
+export const WC_SETTINGS = 
+	process.env.NODE_APP_INSTANCE === 'risastaking' ? {
+		PROJECT_ID: '80c159d7bd9feef4eeb47f1374fbfcae',
+		DAPP_URL: 'https://cap.risastaking.com'
+	}: process.env.NODE_ENV === 'development' ? {
+		PROJECT_ID: '80c159d7bd9feef4eeb47f1374fbfcae',
+		DAPP_URL: 'http://localhost:8080'
+	}: {
+		PROJECT_ID: '7a24d481deb5bf69fa79c9bb19268cbd',
+		DAPP_URL: 'https://www.cap.io'
+	};
+
 export const ARB_TOKEN = '0x912CE59144191C1204E64559FE8253a0e49E6548';
 
 export const DEFAULT_LOCALE = 'en-GB';
@@ -73,12 +88,6 @@ export const BASE_FEES_BPS = {
 };
 
 export const DEFAULT_CHAIN_ID = 42161;
-
-// Project ID associated with [WalletConnect account](https://cloud.walletconnect.com)
-export const WALLET_CONNECT_PROJECT_ID = '7a24d481deb5bf69fa79c9bb19268cbd'
-
-// Required by some wallets for WalletConnect
-export const DAPP_URL = 'https://www.cap.io'
 
 export const CHAINDATA = {
 	31337: {

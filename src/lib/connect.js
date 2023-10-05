@@ -1,6 +1,6 @@
 import { ethers } from 'ethers'
 import { get } from 'svelte/store'
-import { DEFAULT_CHAIN_ID, CHAINDATA, ALCHEMY_SETTINGS, WALLET_CONNECT_PROJECT_ID, DAPP_URL } from './config'
+import { DEFAULT_CHAIN_ID, CHAINDATA, ALCHEMY_SETTINGS, WC_SETTINGS, DAPP_URL } from './config'
 import { chainId, signer, provider, address } from './stores'
 import { showToast, hideModal } from './ui'
 import { getMarketInfo } from '@api/markets'
@@ -22,9 +22,9 @@ const walletConnect = walletConnectModule({
 	version: 2,
     connectFirstChainId: true,
     handleUri: uri => console.log(uri),
-    projectId: WALLET_CONNECT_PROJECT_ID,
+    projectId: WC_SETTINGS.PROJECT_ID,
     requiredChains: [1, 42161], // chains required to be supported by WC wallet
-	dappUrl: DAPP_URL
+    dappUrl: WC_SETTINGS.DAPP_URL
 })
 
 const appMetadata = {
@@ -138,6 +138,7 @@ const { unsubscribe } = state.subscribe(async (update) => {
 });
 
 export async function connect() {
+	console.log(`WC Settings = ${JSON.stringify(WC_SETTINGS)}`)
 	await onboard.connectWallet()
 }
 
